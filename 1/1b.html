@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Text Editor</title>
+	<style type="text/css">
+
+
+body {
+	background: black;
+	color: white;
+}
+
+.popup {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.popup:target {
+	opacity: 1;
+	visibility: visible;
+	width: 40%;
+	padding: 50px;
+	background: #333333;
+	margin: 20px auto;
+	position: relative;
+	border-radius: 10px;
+}
+
+
+.popup .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: white;
+}
+	</style>
+</head>
+<body>
+	<center><h1>Text Editor</h1></center>
+	<center><a class="button" href="#editor">Click Here</a></center>
+	<div class="popup" id="editor">
+		<center><h2>Editor</h2></center>
+		<form>
+			<center><textarea rows="5" cols="54"></textarea>
+			<input type="reset" value="clear"></center>
+			<a class="close" href="#">X</a>
+		</form>
+	</div>
+</body>

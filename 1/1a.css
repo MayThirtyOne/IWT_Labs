@@ -1,0 +1,50 @@
+ol {
+	list-style-type: upper-roman;
+}
+
+ol ol {
+	list-style-type: upper-alpha;
+}
+
+table {
+	border-top-width: medium;
+	border-top-color: red;
+	border-bottom-color: blue;
+	border-bottom-style: dashed;
+	border-width: thick;
+}
+
+th.color1 {
+	color: green;
+}
+
+h1 {
+	color: blue;
+	border-style: double;
+	border-width: thick;
+	border-color: green;
+}
+
+p.one {
+	margin: 0.2in;
+	padding: 0.2in;
+	background-color: #C000C0;
+	border-style: dotted;
+}
+
+p.two {
+	margin: 0.1in;
+	padding: 0.1in;
+	background-color: blue;
+	border-style: solid;
+}
+
+p.three {
+	margin: 0.3in;
+	background-color: yellow;
+}
+
+span.demo {
+	font-size: 24pt;
+	color: purple;
+}

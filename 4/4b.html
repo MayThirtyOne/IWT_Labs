@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program 4b</title>
+	<script type="text/JavaScript">
+		var original;
+		function movein(cur)
+		{
+			var x=document.getElementById(cur).style;
+			original=x.zIndex;
+			x.zIndex="10";
+		}
+		function moveout(cur)
+		{
+			document.getElementById(cur).style.zIndex=original;
+		}
+	</script>
+	<style type="text/css">
+		p.one{
+			position: absolute;
+			padding:100px;
+			left:100px;
+			top:50px;
+			width:150px;
+			background-color:red;
+			z-index:0;
+		}
+		p.two{
+			position: absolute;
+			padding:100px;
+			left:130px;
+			top:60px;
+			width:150px;
+			background-color:green;
+			z-index:1;
+		}
+		p.three{
+			position: absolute;
+			padding:100px;
+			left:160px;
+			top:70px;
+			width:150px;
+			background-color:blue;
+			z-index:2;
+		}
+	</style>
+</head>
+<body>
+	<p class="one" id="stack1" onmouseover="movein('stack1')" onmouseout="moveout('stack1')">Para 1</p>
+	<p class="two" id="stack2" onmouseover="movein('stack2')" onmouseout="moveout('stack2')">Para 2</p>
+	<p class="three" id="stack3" onmouseover="movein('stack3')" onmouseout="moveout('stack3')">Para 3</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="5b.xsl"?>
+<vtu>
+	<student>
+		<name>ABC</name>
+		<usn>1DS09CS761</usn>
+		<branch>CSE</branch>
+		<college>DSCE</college>
+	</student>
+	<student>
+		<name>DEF</name>
+		<usn>1DS09CS662</usn>
+		<branch>CSE</branch>
+		<college>DSCE</college>
+	</student>
+	<student>
+		<name>GHI</name>
+		<usn>1DS09CS092</usn>
+		<branch>ISE</branch>
+		<college>DSCE</college>
+	</student>
+</vtu>

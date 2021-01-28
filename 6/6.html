@@ -1,0 +1,72 @@
+<html>
+    <body>
+        <table>
+            <tr id="products">
+            </tr>
+        </table><br>
+        Cart : <br>
+        <div id="cart"></div><br>
+        Total amount : Rs. <span id="bill"></span>
+        <script>
+            var products = {};
+            var cart = {};
+            function addProduct(id, name, price, image) {
+                products[id] = {
+                    name: name,
+                    price: price,
+                }
+                var html = `
+                    <td>
+                        <h3>${name}</h3>
+                        Price : Rs. <h4>${price}</h4>
+                        <img src=${image} width="200"><br>
+                        <button onclick="addProductToCart(${id})">Add to cart</button>
+                    </td>`
+                document.getElementById('products').innerHTML += html
+            }
+            function addProductToCart(id) {
+                if (id in cart)
+                    cart[id]++;
+                else
+                    cart[id] = 1;
+                reRender()
+            }
+            function reRender() {
+                var cartHtml = `
+                <table border="2">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total price</th>
+                        <th>Actions</th>
+                    </tr>`
+                for (var id in cart) {
+                    if (cart[id] == 0)
+                        continue
+                    cartHtml += `
+                    <tr>
+                        <td>${id}</td>
+                        <td>${products[id].name}</td>
+                        <td>${cart[id]}</td>
+                        <td>${products[id].price}</td>
+                        <td>${products[id].price * cart[id]}</td>
+                        <td>
+                            <button onclick="cart[${id}]++; reRender()">+</button>
+                            <button onclick="cart[${id}]--; reRender()">-</button>    
+                        </td>
+                    </tr>`
+                }
+                var bill = 0;
+                for (var id in cart)
+                    bill += cart[id] * products[id].price
+                document.getElementById('cart').innerHTML = cartHtml
+                document.getElementById('bill').innerText = bill
+            }
+            addProduct(1, 'Wings of Fire', 1200, 'wing.jpg')
+            addProduct(2, 'Clothes', 2340, 'hood.jpg')
+            addProduct(3, 'IPhone', 80000, 'iphone.jpg')
+        </script>
+    </body>
+</html>

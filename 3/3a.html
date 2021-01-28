@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program 3a</title>
+	<script type="text/JavaScript">
+		function validate(usn)
+		{
+			var expr=/^[0-9][a-zA-Z][a-zA-Z][0-9][0-9][a-zA-Z][a-zA-Z][0-9][0-9][0-9]$/;
+			usn=usn.value;
+			console.log(usn);
+			if (usn.match(expr))
+			{
+				alert("Valid");
+				return(true);
+			}
+			else
+			{
+				alert("Invalid");
+				return(false);
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label>Input USN:<input type="text" id="usn"></label>
+		<input type="submit" onclick="validate(document.getElementById('usn'))" value="Check">
+	</form>
+</body>
+</html>

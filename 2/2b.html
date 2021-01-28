@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program 2b</title>
+	<script type="text/JavaScript">
+		function calc()
+		{
+			var n=prompt("Enter n");
+			n=parseInt(n);
+			out="";
+			if(n>0)
+			{
+				out="number and it's square\n";
+				for(var i=1;i<=n;i++)
+				{
+					out=out+i+" -- "+(i*i)+"\n";
+				}
+				alert(out);
+			}
+			else
+			{
+				alert("Invalid input");
+			}
+		}
+	</script>
+</head>
+<body onload="calc()">
+
+</body>
+</html>

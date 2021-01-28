@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program 3b</title>
+	<script type="text/JavaScript">
+		function validate(usn,sem)
+		{
+			var usnexpr=/^[0-9][a-zA-Z][a-zA-Z][0-9][0-9][a-zA-Z][a-zA-Z][0-9][0-9][0-9]$/;
+			var semexpr=/^[0-9]$/;
+			usn=usn.value;
+			sem=sem.value;
+			console.log(usn,sem);
+			if (usn.match(usnexpr)&&sem.match(semexpr))
+			{
+				alert("USN and Sem Valid");
+				return(true);
+			}
+			else if (usn.match(usnexpr)&&!sem.match(semexpr))
+			{
+				alert("USN Valid and Sem Invalid");
+				return(false);
+			}
+			else if (!usn.match(usnexpr)&&sem.match(semexpr))
+			{
+				alert("USN Invalid and Sem Valid");
+				return(false);
+			}
+			else
+			{
+				alert("USN and Sem Invalid");
+				return(false);
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label>Input USN:<input type="text" id="usn"></label><br>
+		<label>Input Sem:<input type="text" id="sem"></label>
+		<input type="submit" onclick="validate(document.getElementById('usn'),document.getElementById('sem'))" value="Check">
+	</form>
+</body>
+</html>
